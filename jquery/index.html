@@ -22,6 +22,16 @@
         }
         $("p").hide().fadeIn();
         $("#main-heading").text("Animals");
+
+        var seconds = 1000;
+        for (var i = 0; i < 5; i++) {           
+            $("#main-heading").fadeOut(seconds).fadeIn(seconds);
+            seconds = seconds + 1000;
+            console.log(seconds);
+        }
+
+        //$("#main-heading").fadeTo(2000, 0.1);
+        
     </script>
 </body>
 
