@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     <script src="index.js"></script>
 </head>
+
 <body>
-    
+    <h1 id="main-heading">
+        Hello world!
+    </h1>
+    <script>
+        var animals = ["dog", "cat", "cow", "parrot"];
+
+        for (var i = 0; i < animals.length; i++) {
+            $("body").append("<p>" + animals[i] + " is cute" + "</p>");    
+        }
+        $("p").hide().fadeIn();
+        $("#main-heading").text("Animals");
+    </script>
 </body>
+
 </html>
