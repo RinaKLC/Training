@@ -5,9 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-    
+    <h1 id="main-heading">
+        Hello world!
+    </h1>
+    <script>
+        /*var animals = ["dog", "cat", "cow", "parrot"];
+
+        for (var i = 0; i < animals.length; i++) {
+            $("body").append("<p>" + animals[i] + " is cute" + "</p>");    
+        }
+        $("p").hide().fadeIn();
+        $("#main-heading").text("Animals");
+
+        var seconds = 1000;
+        for (var i = 0; i < 5; i++) {           
+            $("#main-heading").fadeOut(seconds).fadeIn(seconds);
+            seconds = seconds + 1000;
+            console.log(seconds);
+        }
+
+        //$("#main-heading").fadeTo(2000, 0.1);*/
+
+        var leftOffset = 0;
+        var topOffset = 0;
+        var rightOffset = 200;
+        var bottomOffset = 200;
+
+        var animateHeading = function () {
+             
+                $("#main-heading").offset({
+                left: leftOffset,
+                top: topOffset
+            });
+        
+            leftOffset++;
+            
+            if (leftOffset > 200) {
+                $("#main-heading").offset({
+                top: topOffset
+            });
+                topOffset++;
+                leftOffset--;
+                
+            } 
+
+            if (topOffset > 200) {
+                $("#main-heading").offset({
+                left: rightOffset
+            });
+                rightOffset--;
+                topOffset--;
+            }
+            
+            if (rightOffset < 0) {
+                $("#main-heading").offset({
+                top: bottomOffset
+            });
+                bottomOffset--;
+                topOffset++;
+                rightOffset++;
+                
+            }
+
+            if(bottomOffset < 0 ){ 
+                leftOffset = 0;
+                $("#main-heading").offset({
+                left: leftOffset,
+                
+            });
+
+            leftOffset++;
+            bottomOffset++;
+        }
+
+            console.log("X: " + leftOffset);
+            console.log("Y: " + topOffset);
+            console.log("X: " + rightOffset);
+            console.log("Y: " + bottomOffset);
+        }
+
+        setInterval(animateHeading, 5)
+        clearInterval(animateHeading);
+
+        
+
+    </script>
 </body>
 </html>
